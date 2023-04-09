@@ -10,6 +10,18 @@ export class Cuenta
         this.#saldo = saldo;
     }
 
+    //* setter
+    set cliente(valor) {
+        //si el val recibido es una instancia de la clase cliente
+        if (valor instanceof Cliente) 
+            this.#cliente = valor;
+    }
+    
+    //* getter
+    get cliente() {
+        return this.#cliente;
+    }
+
     //^ metodo1
     depositoEnCta(valor) {
         if (valor > 0)
@@ -18,7 +30,7 @@ export class Cuenta
     }
 
     //^metodo2
-    retirarEnCta(valor) {
+    retirarEnCta(valor) { 
         if (valor <= this.#saldo) //protec de codigo
             this.#saldo -= valor; 
         return this.#saldo;            
@@ -38,3 +50,4 @@ export class Cuenta
         valor = valor * 100;
     }
 }
+
