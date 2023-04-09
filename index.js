@@ -24,4 +24,4 @@ cuentaAhorroPaco.depositoEnCta(200);
 console.log(cuentaAhorroPaco.verSaldo());
 cuentaAhorroPaco.retirarEnCta(120);
 console.log(cuentaAhorroPaco.verSaldo());
-
+cuentaDePaco.prueba();

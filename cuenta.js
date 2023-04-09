@@ -30,7 +30,14 @@ export class Cuenta
     }
 
     //^metodo2
-    retirarEnCta(valor) { 
+    retirarEnCta(valor) {
+        // Llamando metodo priv
+        _retirarEnCta(valor, 0);   
+    }
+
+    //^metodo priv en la clase base
+    _retirarEnCta(valor, comision) { 
+        valor = valor * (1 + comision / 100);
         if (valor <= this.#saldo) //protec de codigo
             this.#saldo -= valor; 
         return this.#saldo;            
@@ -48,6 +55,10 @@ export class Cuenta
         ctaDestino.depositoEnCta(valor);
         valor = 200;
         valor = valor * 100;
+    }
+
+    prueba() {
+        console.log('Método padre');
     }
 }
 

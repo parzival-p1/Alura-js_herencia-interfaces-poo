@@ -10,4 +10,9 @@ export class cuentaCorriente extends Cuenta {
         super(cliente, numero, agencia, 0);
         cuentaCorriente.cantidadCtas++;
     }
+
+    //^metodo2
+    retirarEnCta(valor) {  
+        super._retirarEnCta(valor, 5); //Llamando al metodo priv         
+    }
 }
