@@ -4,6 +4,9 @@ export class Cuenta
     #saldo;  //att priv
 
     constructor(cliente, numero, agencia, saldo) {
+        if (this.constructor == Cuenta) {
+            console.log('No se debe instanciar objetos de la clase Cuenta');
+        }
         this.numero = numero;    //att pub
         this.agencia = agencia; //att pub
         this.#cliente = cliente;
