@@ -1,5 +1,8 @@
 export class SistemaAutenticacion {
     static login(usuario, clave) { //Funcion estatica
-        return usuario.autenticable(clave);
+        if ("autenticable" in usuario && usuario.autenticable instanceof Function) // interfaz utenticable
+            return usuario.autenticable(clave);
+        else 
+            return false;    
     }
-} 
+}
